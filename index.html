@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.js"></script>
+</head>
+
+<body>
+    <div id="box1" style="width: 600px;height: 400px;">
+
+
+    </div>
+    <script>
+        var myChart = echarts.init(document.getElementById('box1'));
+        var option = {
+            title: {
+                text: '我的ECharts',
+                link: 'https://www.jd.com/?cu=true&utm_source=baidu-pinzhuan&utm_medium=cpc&utm_campaign=t_288551095_baidupinzhuan&utm_term=0f3d30c8dba7459bb52f2eb5eba8ac7d_0_1dd197459a87497b84f9f47502a78c87',
+                textStyle: {
+                    color: "red",
+                    // fontSize: 26
+                },
+                subtext: '我的图表',
+                itemGap: 20,
+                // right: 0,
+                // textAlign: 'center',
+                // backgroundColor: 'blue',
+                // borderColor: 'black',
+                // borderWidth: 10,
+                // borderRadius: 10,
+                shadowBlur: 20,
+                shadowColor: 'purple'
+            },
+            tooltip: {
+                trigger: 'axis',
+                // formatter:'{a}:<br>{b}:{c}'
+            },
+            legend: {
+                data: [{ name: '1月销量' }, {
+                    name: '2月销量', icon: 'roundRect', textStyle: {
+                        color: 'green'
+                    },
+                }],
+                orient: 'vertical',
+
+                icon: 'circle',
+                backgroundColor: '#bfa'
+                // show:false
+            },
+            xAxis: {
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+                // show:true,
+                axisLine: {
+                    lineStyle: {
+                        // color: '#eee',
+                        // width: 1
+                        type:'dashed'
+
+                    }
+                },
+                axisTick:{
+                    show:true
+                },
+                axisLable:{
+
+                }
+
+            },
+            yAxis: {
+
+            },
+            series: [{
+                name: '1月销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20],
+                color: 'purple'
+            }, {
+                name: '2月销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
